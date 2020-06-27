@@ -1,0 +1,42 @@
+{% extends 'baselayout.html' %} {% block content %}
+
+<div class="container">
+  <h2 class="text-center">Create New Blog</h2>
+  <form method="POST" action="newpost" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleFormControlFile1"
+        >Upload a thumbnail to your blog.</label
+      >
+      <input
+        type="file"
+        class="form-control-file"
+        id="exampleFormControlFile1"
+        name="thumbnail"
+        required="required"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Blog Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        placeholder="Enter title"
+        required="required"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Body</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+        name="body"
+        required="required"
+      ></textarea>
+    </div>
+    <input type="submit" value="Post" class="btn btn-primary" />
+  </form>
+</div>
+{% endblock %}

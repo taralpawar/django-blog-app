@@ -1,0 +1,27 @@
+{% extends 'baselayout.html' %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    {% for blog in result %}
+    <div class="col-4">
+      <div class="card" style="width: 90%;">
+        <img
+          class="card-img-top"
+          src="{{blog.thumbnail.url}}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{blog.title}}</h5>
+          <p class="card-text">
+            {{blog.snippet}} ...
+          </p>
+          <a href="read/{{blog.id}}/" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

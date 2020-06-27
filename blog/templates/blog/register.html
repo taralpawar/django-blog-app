@@ -1,0 +1,78 @@
+{% extends 'baselayout.html' %} {% block content %}
+
+<h1 class="text-center">Signup Page</h1>
+
+<div class="container">
+  <form method="POST" action="register">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Username"
+        name="username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="First Name"
+        name="fname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Last Name"
+        name="lname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        name="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        name="pass1"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Re-enter Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password Again"
+        name="pass2"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sign up</button>
+    <br />
+  </form>
+</div>
+
+{% endblock %}

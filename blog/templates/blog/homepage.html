@@ -1,0 +1,35 @@
+{% extends 'baselayout.html' %}
+
+<!---->
+{% block content%}
+
+<div class="container">
+  {% if messages %} {% for message in messages %}
+
+  <p class="alert alert-success">{{message}}</p>
+
+  {% endfor %} {% endif %}
+
+  <div class="row">
+    {% for blog in allblogs %}
+    <div class="col-4">
+      <div class="card" style="width: 90%;">
+        <img
+          class="card-img-top"
+          src="{{blog.thumbnail.url}}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{blog.title}}</h5>
+          <p class="card-text">
+            {{blog.snippet}} ...
+          </p>
+          <a href="read/{{blog.id}}/" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
